@@ -1,12 +1,10 @@
 package main
 
 import (
+	"fmt"
 	"github.com/n0npax/proxy_generator/cmd"
 	"os"
-	"fmt"
 )
-
-
 
 func main() {
 
@@ -15,4 +13,3 @@ func main() {
 		os.Exit(1)
 	}
 }
-

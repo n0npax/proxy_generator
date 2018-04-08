@@ -1,10 +1,10 @@
 package dbreader
 
 import (
-	"strings"
 	"github.com/n0npax/proxy_generator/parser"
-
+	"strings"
 )
+
 // ReadNginxRedirection dispatcher right functions for different dbs
 func ReadNginxRedirection(dnEndpoint string) []parser.NginxRedirection {
 
