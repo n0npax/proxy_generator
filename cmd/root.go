@@ -10,14 +10,17 @@ import (
 )
 
 func init() {
-	RootCmd.Flags().String("db-endpoint", "", "in example sqlite:///PATH")
+	RootCmd.Flags().String("db-endpoint", "", "in example sqlite://${PATH}")
 	RootCmd.Flags().String("output", "", "default stdut, if path will redirect output to given file")
 	RootCmd.Flags().String("template-file", "./templates/nginx.conf.tmpl", "")
 }
 
 // RootCmd is main cobra command
 var RootCmd = &cobra.Command{
-	Use: "generates nginx config with redirections based on given input",
+	Long: `Command line tool to generating nginx.conf based on given template and set of redirections
+Can use command line arguments or database`,
+	Short: "Command line tool to generating nginx.conf based on given template and set of redirections",
+	Use: "proxy_generator example http://example.com cnn https://cnn.com",
 	Run: func(cmd *cobra.Command, args []string) {
 		dbEndpoint := cmd.Flag("db-endpoint").Value.String()
 		outputFlag := cmd.Flag("output").Value.String()
