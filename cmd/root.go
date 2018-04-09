@@ -51,7 +51,7 @@ var RootCmd = &cobra.Command{
 			}
 		}
 		if len(redirections) == 0 {
-			fmt.Println("No redirrection to inject to config file")
+			fmt.Println("No redirrections found. Will not generate anything file")
 			os.Exit(1)
 		}
 		parser.GenerateConfig(redirections, output, templateFile)
